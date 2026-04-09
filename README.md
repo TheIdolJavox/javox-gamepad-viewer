@@ -32,8 +32,11 @@ https://raw.githubusercontent.com/TheIdolJavox/javox-gamepad-viewer/main/javox-d
 
 **Cómo saber que es la versión nueva:** el comentario debe incluir **`build: safe-base-v2`** (o superior). Si el mando se ve “por defecto” o mal centrado, suele ser **caché de jsDelivr** con un CSS viejo: usa la **URL con commit** de abajo o purga.
 
-**URL fija al último commit** (sustituye `COMMIT` por el hash corto del último commit en GitHub → botón verde “<> Code” → copiar SHA):  
-`https://cdn.jsdelivr.net/gh/TheIdolJavox/javox-gamepad-viewer@COMMIT/javox-ds4.css`
+**URL fija a este fix** (evita caché de `@main` en jsDelivr):
+
+```
+https://cdn.jsdelivr.net/gh/TheIdolJavox/javox-gamepad-viewer@0bafdef/javox-ds4.css
+```
 
 ## Usar en GamePad Viewer (clásico)
 
