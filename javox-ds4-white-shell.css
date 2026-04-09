@@ -1,0 +1,41 @@
+/*
+ * JAVOX — carcasa blanca (build: white-shell-v1)
+ * Importa el tema base y añade una capa clara SOLO sobre el cuerpo (base.svg).
+ * Los botones/sticks/touchpad quedan encima sin esa capa → mismo diseño, más color.
+ *
+ * En GPV pega la URL de ESTE archivo (no la de javox-ds4.css).
+ * Ajusta opacidad en el gradiente si quieres más/menos blanco.
+ */
+
+@import url("javox-ds4.css");
+
+/* Capa sobre el fondo del mando; no sustituye el SVG (evita romper GPV). */
+.controller.ds4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(
+    ellipse 100% 95% at 50% 50%,
+    rgba(255, 255, 255, 0.58) 0%,
+    rgba(248, 248, 252, 0.5) 42%,
+    rgba(238, 239, 244, 0.52) 70%,
+    rgba(230, 232, 238, 0.48) 100%
+  );
+}
+
+/* Controles por encima de la capa blanca (orden interno igual que el DOM). */
+.ds4 .triggers,
+.ds4 .bumpers,
+.ds4 .touchpad,
+.ds4 .meta,
+.ds4 .arrows,
+.ds4 .abxy,
+.ds4 .sticks,
+.ds4 .dpad {
+  z-index: 1;
+}

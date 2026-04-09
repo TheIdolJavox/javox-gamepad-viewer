@@ -4,6 +4,16 @@ Repositorio: [github.com/TheIdolJavox/javox-gamepad-viewer](https://github.com/T
 
 Tema con fondo negro, acentos cian (`#00FFC8`), texto **JAVOX** estilo LED y hueco para tu logo.
 
+### Carcasa blanca (solo el cuerpo, botones igual)
+
+Usa el archivo **`javox-ds4-white-shell.css`**: importa el tema base y añade una capa clara **solo** sobre el `base.svg`; gatillos, bumpers, touchpad, sticks, cara y D-pad quedan **encima** sin esa capa.
+
+Raw:
+
+```
+https://raw.githubusercontent.com/TheIdolJavox/javox-gamepad-viewer/main/javox-ds4-white-shell.css?nocache=1
+```
+
 ## URLs del CSS (elige una)
 
 **1. GitHub Raw** (a veces tu operador o red guardan en caché una versión vieja):
