@@ -1,9 +1,10 @@
 /*
- * JAVOX — tema DS4 para GamePad Viewer  (build: ps-logo-grips-v1)
+ * JAVOX — tema DS4 para GamePad Viewer  (build: safe-base-v2)
  * Colores: negro + cian #00FFC8
  *
  * Logo: assets/logo.png (transparente). Sustituye el icono del botón PS (.meta).
- * Base del mando: URL absoluta al SVG oficial de GPV (el CSS externo no resuelve ps4-assets/).
+ * NO redefinir background/base.svg aquí: con CSS en GitHub/jsDelivr rompe el skin en GPV
+ * (mando “default”, desalineado o sin textura). Grips cian = solo box-shadow inset.
  * Repo: https://github.com/TheIdolJavox/javox-gamepad-viewer
  */
 
@@ -20,35 +21,14 @@ body {
   background: #000000 !important;
 }
 
-/* Grips inferiores + ligero acento en hombros; encima del SVG base */
+/* Solo sombras: el fondo del mando lo sigue poniendo el CSS base de GPV (ps4-assets). */
 .controller.ds4 {
-  background-color: #0a0a0c;
-  background-image:
-    linear-gradient(
-      to top,
-      rgba(0, 255, 200, 0.55) 0%,
-      rgba(0, 255, 200, 0.28) 7%,
-      rgba(0, 255, 200, 0.1) 15%,
-      transparent 28%
-    ),
-    radial-gradient(
-      ellipse 150px 70px at 20% 11%,
-      rgba(0, 255, 200, 0.2),
-      transparent 70%
-    ),
-    radial-gradient(
-      ellipse 150px 70px at 80% 11%,
-      rgba(0, 255, 200, 0.2),
-      transparent 70%
-    ),
-    url("https://gamepadviewer.com/ps4-assets/base.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 806px 598px, 806px 598px, 806px 598px, 806px 598px;
   box-shadow:
     0 0 28px rgba(0, 255, 200, 0.35),
     0 0 60px rgba(0, 255, 200, 0.12),
-    inset 0 0 100px rgba(0, 255, 200, 0.07);
+    inset 0 -100px 85px -25px rgba(0, 255, 200, 0.42),
+    inset 0 -45px 55px rgba(0, 255, 200, 0.18),
+    inset 0 0 100px rgba(0, 255, 200, 0.06);
 }
 
 /* Contorno cian zona L2/R2 (barra superior de gatillos) */
