@@ -1,5 +1,5 @@
 /*
- * JAVOX — tema DS4 para GamePad Viewer
+ * JAVOX — tema DS4 para GamePad Viewer  (build: visible-accents)
  * Colores: negro + cian #00FFC8
  *
  * El logo está en assets/logo.png (ruta relativa al CSS; válida al cargar desde GitHub Raw).
@@ -12,11 +12,11 @@
 /*
  * Importante: NO usar filter en .controller.ds4. En Chromium / fuente Navegador de
  * Streamlabs el mando puede dejar de pintarse (pantalla en blanco o sin control).
- * El tinte cian se consigue solo con acentos (texto, sombras, logo).
+ * Acentos cian: sombras, marco touchpad, resplandor en sticks/botones/cruz.
+ * filter solo en piezas pequeñas (.button, .stick, .face), nunca en .controller.ds4.
  *
- * NO pongas position:relative en .controller.ds4: el skin base usa
- * position:absolute + transform para centrar el mando; al cambiarlo, el
- * control sube y se recorta en la vista previa (beta / OBS).
+ * NO pongas position:relative en .controller.ds4 ni en .ds4 .touchpad: el base usa
+ * position:absolute para colocar el mando y el touchpad.
  */
 
 html,
@@ -25,7 +25,10 @@ body {
 }
 
 .controller.ds4 {
-  box-shadow: 0 0 24px rgba(0, 255, 200, 0.22);
+  box-shadow:
+    0 0 28px rgba(0, 255, 200, 0.35),
+    0 0 60px rgba(0, 255, 200, 0.12),
+    inset 0 0 100px rgba(0, 255, 200, 0.07);
 }
 
 .controller.ds4::before {
@@ -45,13 +48,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 255, 200, 0.55);
+  border-radius: 6px;
+  box-shadow:
+    0 0 18px rgba(0, 255, 200, 0.4),
+    inset 0 0 32px rgba(0, 255, 200, 0.14);
 }
 
 .ds4 .touchpad::after {
   content: "JAVOX";
   font-family: "Orbitron", sans-serif;
   font-weight: 900;
-  font-size: 22px;
+  font-size: 20px;
   letter-spacing: 0.35em;
   text-indent: 0.35em;
   color: #00ffc8;
@@ -61,7 +70,25 @@ body {
     0 0 28px rgba(0, 255, 200, 0.5);
   pointer-events: none;
   z-index: 6;
-  opacity: 0.95;
+  opacity: 0.98;
+}
+
+/* Resplandor cian en piezas (no en el cuerpo entero → evita mando invisible) */
+.ds4 .button {
+  filter: drop-shadow(0 0 5px rgba(0, 255, 200, 0.75));
+}
+
+.ds4 .stick {
+  filter: drop-shadow(0 0 7px rgba(0, 255, 200, 0.65));
+}
+
+.ds4 .face {
+  filter: drop-shadow(0 0 4px rgba(0, 255, 200, 0.6));
+}
+
+.ds4 .bumper.pressed,
+.ds4 .trigger {
+  filter: drop-shadow(0 0 6px rgba(0, 255, 200, 0.45));
 }
 
 .ds4 .touchpad.pressed::after {

@@ -12,13 +12,25 @@ Tema con fondo negro, acentos cian (`#00FFC8`), texto **JAVOX** estilo LED y hue
 https://raw.githubusercontent.com/TheIdolJavox/javox-gamepad-viewer/main/javox-ds4.css
 ```
 
-**2. jsDelivr** (mismo archivo, otra CDN; suele funcionar si Raw te muestra código antiguo con `filter:` en `.controller.ds4`):
+**2. jsDelivr** (`@main` a veces va **retrasado** respecto a GitHub; si no ves la última versión, purga la caché):
 
 ```
 https://cdn.jsdelivr.net/gh/TheIdolJavox/javox-gamepad-viewer@main/javox-ds4.css
 ```
 
-**Cómo saber que es la versión correcta:** al abrir el enlace debe aparecer el comentario *«NO usar filter en .controller.ds4»* y la regla **`.controller.ds4 { position: relative; box-shadow: … }`**. Si ves **`filter: saturate`** ahí, es caché: prueba jsDelivr, datos móviles u otra red.
+Abre una vez en el navegador (o usa GET) la URL de purga de jsDelivr y luego recarga el CSS:
+
+```
+https://purge.jsdelivr.net/gh/TheIdolJavox/javox-gamepad-viewer@main/javox-ds4.css
+```
+
+**3. Raw con anti-caché** (útil en tu red):
+
+```
+https://raw.githubusercontent.com/TheIdolJavox/javox-gamepad-viewer/main/javox-ds4.css?nocache=1
+```
+
+**Cómo saber que es la versión nueva:** la primera línea del comentario debe incluir **`(build: visible-accents)`** y **no** debe haber `filter: saturate` dentro de **`.controller.ds4`**. Solo **`box-shadow`** en el mando completo; el `filter` que hay es solo en `.button`, `.stick`, `.face`, etc.
 
 ## Usar en GamePad Viewer (clásico)
 
@@ -40,7 +52,7 @@ https://gamepadviewer.com/?p=1&css=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FTheIdol
 
 ## Beta (beta.gamepadviewer.com)
 
-En **Edit CSS URL** pega la URL de **jsDelivr** o la **Raw** (la que en tu navegador muestre la versión sin `filter` en el mando).
+En **Edit CSS URL** pega la **Raw** (con `?nocache=1` si hace falta) o **jsDelivr** después de **purgar** si `@main` te muestra código viejo. Comprueba en el navegador que ves **`build: visible-accents`** antes de pegarla en GPV.
 
 ## OBS
 
