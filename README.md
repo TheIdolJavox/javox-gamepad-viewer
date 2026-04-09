@@ -35,7 +35,7 @@ https://raw.githubusercontent.com/TheIdolJavox/javox-gamepad-viewer/main/javox-d
 **URL fija (jsDelivr por commit; actualiza el hash si haces pull nuevo):**
 
 ```
-https://cdn.jsdelivr.net/gh/TheIdolJavox/javox-gamepad-viewer@COMMIT/javox-ds4.css
+https://cdn.jsdelivr.net/gh/TheIdolJavox/javox-gamepad-viewer@e931c40/javox-ds4.css
 ```
 
 ## Usar en GamePad Viewer (clásico)
