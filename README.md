@@ -4,13 +4,25 @@ Tema con fondo negro, acentos cian (`#00FFC8`), texto **JAVOX** estilo LED y hue
 
 El logo ya está en `assets/logo.png`; el CSS lo referencia con una ruta relativa (correcta al servir el `.css` desde GitHub Raw).
 
+## Tu repositorio
+
+Usuario: **TheIdolJavox**. Si publicaste esta carpeta como repo, lo habitual es que el nombre sea **`javox-gamepad-viewer`** (si elegiste otro nombre en GitHub Desktop, cambia ese segmento en las URLs de abajo).
+
+## URL del CSS (Raw)
+
+```
+https://raw.githubusercontent.com/TheIdolJavox/javox-gamepad-viewer/main/javox-ds4.css
+```
+
 ## Usar en GamePad Viewer (clásico)
 
-En [gamepadviewer.com](https://gamepadviewer.com/), genera una URL que incluya el parámetro `css` apuntando al archivo **raw** de este repositorio:
+En [gamepadviewer.com](https://gamepadviewer.com/), en el generador, pega la URL **Raw** anterior en el campo de CSS personalizado, o usa una URL directa como:
 
-`https://gamepadviewer.com/?p=1&css=URL_ENCODED_DEL_CSS_RAW`
+```
+https://gamepadviewer.com/?p=1&css=https%3A%2F%2Fraw.githubusercontent.com%2FTheIdolJavox%2Fjavox-gamepad-viewer%2Fmain%2Fjavox-ds4.css
+```
 
-La URL del CSS debe ser HTTPS y ser el enlace “Raw” de GitHub (no la página HTML del archivo).
+(`p=1` es el jugador 1; cámbialo si muestras otro mando.)
 
 ## Beta (beta.gamepadviewer.com)
 

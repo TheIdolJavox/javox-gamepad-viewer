@@ -3,7 +3,8 @@
  * Colores: negro + cian #00FFC8
  *
  * El logo está en assets/logo.png (ruta relativa al CSS; válida al cargar desde GitHub Raw).
- * GamePad Viewer: ?p=1&css=https://raw.githubusercontent.com/USUARIO/REPO/main/javox-gamepad-viewer/javox-ds4.css
+ * Repo: TheIdolJavox/javox-gamepad-viewer (raíz = esta carpeta)
+ * CSS Raw: https://raw.githubusercontent.com/TheIdolJavox/javox-gamepad-viewer/main/javox-ds4.css
  */
 
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap");
