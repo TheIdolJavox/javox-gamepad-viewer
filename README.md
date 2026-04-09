@@ -2,12 +2,7 @@
 
 Tema con fondo negro, acentos cian (`#00FFC8`), texto **JAVOX** estilo LED y hueco para tu logo.
 
-## Antes de subir a GitHub
-
-1. Coloca tu logo en `assets/logo.png` (o el nombre que prefieras).
-2. Abre `javox-ds4.css` y sustituye `REEMPLAZA_URL_RAW_DEL_LOGO.png` por la URL **Raw** real, por ejemplo:
-
-   `https://raw.githubusercontent.com/TU_USUARIO/TU_REPO/main/javox-gamepad-viewer/assets/logo.png`
+El logo ya está en `assets/logo.png`; el CSS lo referencia con una ruta relativa (correcta al servir el `.css` desde GitHub Raw).
 
 ## Usar en GamePad Viewer (clásico)
 

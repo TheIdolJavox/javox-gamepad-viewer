@@ -2,9 +2,8 @@
  * JAVOX — tema DS4 para GamePad Viewer
  * Colores: negro + cian #00FFC8
  *
- * 1. Sube tu logo PNG a GitHub (esta repo) y pon aquí la URL "Raw" completa.
- * 2. En gamepadviewer.com usa el generador de URL con:
- *    ?p=1&css=https://raw.githubusercontent.com/TU_USUARIO/TU_REPO/main/javox-gamepad-viewer/javox-ds4.css
+ * El logo está en assets/logo.png (ruta relativa al CSS; válida al cargar desde GitHub Raw).
+ * GamePad Viewer: ?p=1&css=https://raw.githubusercontent.com/USUARIO/REPO/main/javox-gamepad-viewer/javox-ds4.css
  */
 
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap");
@@ -27,9 +26,7 @@ body {
   transform: translate(-50%, -50%);
   width: 120px;
   height: 120px;
-  /* Reemplaza por la URL Raw de tu logo en GitHub, p. ej.:
-     https://raw.githubusercontent.com/tuusuario/turepo/main/javox-gamepad-viewer/assets/logo.png */
-  background: url("REEMPLAZA_URL_RAW_DEL_LOGO.png") no-repeat center / contain;
+  background: url("assets/logo.png") no-repeat center / contain;
   pointer-events: none;
   z-index: 5;
   filter: drop-shadow(0 0 10px rgba(0, 255, 200, 0.65));
