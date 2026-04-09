@@ -1,0 +1,66 @@
+/*
+ * JAVOX — tema DS4 para GamePad Viewer
+ * Colores: negro + cian #00FFC8
+ *
+ * 1. Sube tu logo PNG a GitHub (esta repo) y pon aquí la URL "Raw" completa.
+ * 2. En gamepadviewer.com usa el generador de URL con:
+ *    ?p=1&css=https://raw.githubusercontent.com/TU_USUARIO/TU_REPO/main/javox-gamepad-viewer/javox-ds4.css
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap");
+
+html,
+body {
+  background: #000000 !important;
+}
+
+.controller.ds4 {
+  filter: saturate(1.15) hue-rotate(155deg) brightness(0.92) contrast(1.08)
+    drop-shadow(0 0 14px rgba(0, 255, 200, 0.35));
+}
+
+.controller.ds4::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 38%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  /* Reemplaza por la URL Raw de tu logo en GitHub, p. ej.:
+     https://raw.githubusercontent.com/tuusuario/turepo/main/javox-gamepad-viewer/assets/logo.png */
+  background: url("REEMPLAZA_URL_RAW_DEL_LOGO.png") no-repeat center / contain;
+  pointer-events: none;
+  z-index: 5;
+  filter: drop-shadow(0 0 10px rgba(0, 255, 200, 0.65));
+}
+
+.ds4 .touchpad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ds4 .touchpad::after {
+  content: "JAVOX";
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: 0.35em;
+  text-indent: 0.35em;
+  color: #00ffc8;
+  text-shadow:
+    0 0 6px #00ffc8,
+    0 0 16px rgba(0, 255, 200, 0.9),
+    0 0 28px rgba(0, 255, 200, 0.5);
+  pointer-events: none;
+  z-index: 6;
+  opacity: 0.95;
+}
+
+.ds4 .touchpad.pressed::after {
+  color: #ffffff;
+  text-shadow:
+    0 0 8px #00ffc8,
+    0 0 20px rgba(0, 255, 200, 1);
+}
