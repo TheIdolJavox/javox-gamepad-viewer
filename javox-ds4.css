@@ -1,19 +1,18 @@
 /*
- * JAVOX — tema DS4 para GamePad Viewer  (build: safe-base-v2)
+ * JAVOX — tema DS4 para GamePad Viewer  (build: clean-base-v3)
  * Colores: negro + cian #00FFC8
  *
- * Logo: assets/logo.png (transparente). Sustituye el icono del botón PS (.meta).
- * NO redefinir background/base.svg aquí: con CSS en GitHub/jsDelivr rompe el skin en GPV
- * (mando “default”, desalineado o sin textura). Grips cian = solo box-shadow inset.
+ * Logo: assets/logo.png (J cian sobre círculo negro; cubre el botón PS).
+ * NO redefinir background del mando (ver comentarios en repo).
  * Repo: https://github.com/TheIdolJavox/javox-gamepad-viewer
  */
 
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap");
 
 /*
- * NO filter en .controller.ds4 (mando invisible en algunos navegadores).
- * NO position:relative en .controller.ds4 ni .ds4 .touchpad (rompe el layout del skin base).
- * NO cambiar position del .meta (sigue absolute en el base).
+ * NO filter en .controller.ds4.
+ * NO position:relative en .controller.ds4 ni .ds4 .touchpad.
+ * NO cambiar position del .meta.
  */
 
 html,
@@ -21,45 +20,18 @@ body {
   background: #000000 !important;
 }
 
-/* Solo sombras: el fondo del mando lo sigue poniendo el CSS base de GPV (ps4-assets). */
-.controller.ds4 {
-  box-shadow:
-    0 0 28px rgba(0, 255, 200, 0.35),
-    0 0 60px rgba(0, 255, 200, 0.12),
-    inset 0 -100px 85px -25px rgba(0, 255, 200, 0.42),
-    inset 0 -45px 55px rgba(0, 255, 200, 0.18),
-    inset 0 0 100px rgba(0, 255, 200, 0.06);
-}
-
-/* Contorno cian zona L2/R2 (barra superior de gatillos) */
-.ds4 .triggers {
-  border-radius: 6px;
-  box-shadow:
-    0 0 0 1px rgba(0, 255, 200, 0.65),
-    0 0 14px rgba(0, 255, 200, 0.25);
-}
-
-/* Contorno cian zona L1/R1 */
-.ds4 .bumpers {
-  border-radius: 4px;
-  box-shadow:
-    0 0 0 1px rgba(0, 255, 200, 0.7),
-    0 0 12px rgba(0, 255, 200, 0.28);
-}
-
-/* Botón PS: logo JAVOX en lugar del símbolo PlayStation */
+/* Botón PS: logo con círculo negro que tapa el símbolo PlayStation (.meta = 42×42) */
 .ds4 .meta::before {
   content: "";
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 30px;
-  height: 30px;
+  width: 42px;
+  height: 42px;
   background: url("assets/logo.png") no-repeat center / contain;
   pointer-events: none;
   z-index: 2;
-  filter: drop-shadow(0 0 5px rgba(0, 255, 200, 0.85));
 }
 
 .ds4 .meta.pressed {
@@ -67,11 +39,11 @@ body {
 }
 
 .ds4 .meta.pressed::before {
-  transform: translate(-50%, -50%) scale(0.9);
-  opacity: 0.92;
+  transform: translate(-50%, -50%) scale(0.92);
+  opacity: 0.95;
 }
 
-/* SHARE / OPTIONS: el arte está en start.svg; zoom reduce todo el bloque */
+/* SHARE / OPTIONS: el arte está en start.svg */
 .ds4 .arrows {
   zoom: 0.72;
 }
@@ -115,11 +87,6 @@ body {
 
 .ds4 .face {
   filter: drop-shadow(0 0 4px rgba(0, 255, 200, 0.6));
-}
-
-.ds4 .bumper.pressed,
-.ds4 .trigger {
-  filter: drop-shadow(0 0 6px rgba(0, 255, 200, 0.45));
 }
 
 .ds4 .touchpad.pressed::after {

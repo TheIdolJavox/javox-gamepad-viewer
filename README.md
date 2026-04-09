@@ -30,12 +30,12 @@ https://purge.jsdelivr.net/gh/TheIdolJavox/javox-gamepad-viewer@main/javox-ds4.c
 https://raw.githubusercontent.com/TheIdolJavox/javox-gamepad-viewer/main/javox-ds4.css?nocache=1
 ```
 
-**Cómo saber que es la versión nueva:** el comentario debe incluir **`build: safe-base-v2`** (o superior). Si el mando se ve “por defecto” o mal centrado, suele ser **caché de jsDelivr** con un CSS viejo: usa la **URL con commit** de abajo o purga.
+**Cómo saber que es la versión nueva:** el comentario debe incluir **`build: clean-base-v3`** (o superior). Si el mando se ve “por defecto” o mal centrado, suele ser **caché de jsDelivr**: usa la **URL con commit** de abajo o purga.
 
-**URL fija a este fix** (evita caché de `@main` en jsDelivr):
+**URL fija (jsDelivr por commit; actualiza el hash si haces pull nuevo):**
 
 ```
-https://cdn.jsdelivr.net/gh/TheIdolJavox/javox-gamepad-viewer@0bafdef/javox-ds4.css
+https://cdn.jsdelivr.net/gh/TheIdolJavox/javox-gamepad-viewer@COMMIT/javox-ds4.css
 ```
 
 ## Usar en GamePad Viewer (clásico)
