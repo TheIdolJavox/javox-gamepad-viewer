@@ -13,6 +13,10 @@
  * Importante: NO usar filter en .controller.ds4. En Chromium / fuente Navegador de
  * Streamlabs el mando puede dejar de pintarse (pantalla en blanco o sin control).
  * El tinte cian se consigue solo con acentos (texto, sombras, logo).
+ *
+ * NO pongas position:relative en .controller.ds4: el skin base usa
+ * position:absolute + transform para centrar el mando; al cambiarlo, el
+ * control sube y se recorta en la vista previa (beta / OBS).
  */
 
 html,
@@ -21,7 +25,6 @@ body {
 }
 
 .controller.ds4 {
-  position: relative;
   box-shadow: 0 0 24px rgba(0, 255, 200, 0.22);
 }
 

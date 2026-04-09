@@ -46,6 +46,10 @@ En **Edit CSS URL** pega la URL de **jsDelivr** o la **Raw** (la que en tu naveg
 
 Fuente **Navegador**: pega la URL final generada por GamePad Viewer y ajusta ancho/alto hasta que el mando se vea bien.
 
+## Si el mando sale “arriba” o recortado en la vista previa
+
+El skin base de GamePad Viewer centra el DS4 con `position: absolute` y `transform`. **No uses `position: relative` en `.controller.ds4`** (rompe ese centrado). Este tema ya evita eso.
+
 ## Si el mando “desaparece” en la beta
 
 - Asegúrate de tener la última versión de este CSS (evitamos `filter` en todo el mando: en algunos navegadores el control deja de dibujarse).
