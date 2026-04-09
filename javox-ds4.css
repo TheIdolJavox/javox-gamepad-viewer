@@ -9,14 +9,20 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap");
 
+/*
+ * Importante: NO usar filter en .controller.ds4. En Chromium / fuente Navegador de
+ * Streamlabs el mando puede dejar de pintarse (pantalla en blanco o sin control).
+ * El tinte cian se consigue solo con acentos (texto, sombras, logo).
+ */
+
 html,
 body {
   background: #000000 !important;
 }
 
 .controller.ds4 {
-  filter: saturate(1.15) hue-rotate(155deg) brightness(0.92) contrast(1.08)
-    drop-shadow(0 0 14px rgba(0, 255, 200, 0.35));
+  position: relative;
+  box-shadow: 0 0 24px rgba(0, 255, 200, 0.22);
 }
 
 .controller.ds4::before {
@@ -30,7 +36,6 @@ body {
   background: url("assets/logo.png") no-repeat center / contain;
   pointer-events: none;
   z-index: 5;
-  filter: drop-shadow(0 0 10px rgba(0, 255, 200, 0.65));
 }
 
 .ds4 .touchpad {

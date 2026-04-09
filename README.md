@@ -21,3 +21,10 @@ Si el builder te deja pegar CSS o enlazar una hoja externa, usa la misma URL raw
 ## OBS
 
 Fuente **Navegador**: pega la URL final generada por GamePad Viewer y ajusta ancho/alto hasta que el mando se vea bien.
+
+## Si el mando “desaparece” en la beta
+
+- Asegúrate de tener la última versión de este CSS (evitamos `filter` en todo el mando: en algunos navegadores el control deja de dibujarse).
+- Abre en el navegador la URL Raw del CSS: debe mostrarse texto CSS, no error 404.
+- Si sigue fallando solo en la beta, prueba la vista clásica con el mismo CSS:  
+  [gamepadviewer.com con tu skin](https://gamepadviewer.com/?p=1&css=https%3A%2F%2Fraw.githubusercontent.com%2FTheIdolJavox%2Fjavox-gamepad-viewer%2Fmain%2Fjavox-ds4.css)
