@@ -1,5 +1,7 @@
 # JAVOX — CSS para GamePad Viewer (PS4 / DS4)
 
+Repositorio: [github.com/TheIdolJavox/javox-gamepad-viewer](https://github.com/TheIdolJavox/javox-gamepad-viewer)
+
 Tema con fondo negro, acentos cian (`#00FFC8`), texto **JAVOX** estilo LED y hueco para tu logo.
 
 ## Usar en GamePad Viewer (clásico)
