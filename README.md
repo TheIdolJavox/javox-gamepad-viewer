@@ -30,7 +30,7 @@ https://purge.jsdelivr.net/gh/TheIdolJavox/javox-gamepad-viewer@main/javox-ds4.c
 https://raw.githubusercontent.com/TheIdolJavox/javox-gamepad-viewer/main/javox-ds4.css?nocache=1
 ```
 
-**Cómo saber que es la versión nueva:** la primera línea del comentario debe incluir **`(build: visible-accents)`** y **no** debe haber `filter: saturate` dentro de **`.controller.ds4`**. Solo **`box-shadow`** en el mando completo; el `filter` que hay es solo en `.button`, `.stick`, `.face`, etc.
+**Cómo saber que es la versión nueva:** el comentario inicial debe incluir el **`build:`** actual (p. ej. **`ps-logo-grips-v1`**) y **no** debe haber `filter: saturate` en **`.controller.ds4`**.
 
 ## Usar en GamePad Viewer (clásico)
 

@@ -1,22 +1,18 @@
 /*
- * JAVOX — tema DS4 para GamePad Viewer  (build: visible-accents)
+ * JAVOX — tema DS4 para GamePad Viewer  (build: ps-logo-grips-v1)
  * Colores: negro + cian #00FFC8
  *
- * El logo está en assets/logo.png (ruta relativa al CSS; válida al cargar desde GitHub Raw).
- * Repo: TheIdolJavox/javox-gamepad-viewer (raíz = esta carpeta)
- * CSS Raw: https://raw.githubusercontent.com/TheIdolJavox/javox-gamepad-viewer/main/javox-ds4.css
+ * Logo: assets/logo.png (transparente). Sustituye el icono del botón PS (.meta).
+ * Base del mando: URL absoluta al SVG oficial de GPV (el CSS externo no resuelve ps4-assets/).
+ * Repo: https://github.com/TheIdolJavox/javox-gamepad-viewer
  */
 
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap");
 
 /*
- * Importante: NO usar filter en .controller.ds4. En Chromium / fuente Navegador de
- * Streamlabs el mando puede dejar de pintarse (pantalla en blanco o sin control).
- * Acentos cian: sombras, marco touchpad, resplandor en sticks/botones/cruz.
- * filter solo en piezas pequeñas (.button, .stick, .face), nunca en .controller.ds4.
- *
- * NO pongas position:relative en .controller.ds4 ni en .ds4 .touchpad: el base usa
- * position:absolute para colocar el mando y el touchpad.
+ * NO filter en .controller.ds4 (mando invisible en algunos navegadores).
+ * NO position:relative en .controller.ds4 ni .ds4 .touchpad (rompe el layout del skin base).
+ * NO cambiar position del .meta (sigue absolute en el base).
  */
 
 html,
@@ -24,24 +20,80 @@ body {
   background: #000000 !important;
 }
 
+/* Grips inferiores + ligero acento en hombros; encima del SVG base */
 .controller.ds4 {
+  background-color: #0a0a0c;
+  background-image:
+    linear-gradient(
+      to top,
+      rgba(0, 255, 200, 0.55) 0%,
+      rgba(0, 255, 200, 0.28) 7%,
+      rgba(0, 255, 200, 0.1) 15%,
+      transparent 28%
+    ),
+    radial-gradient(
+      ellipse 150px 70px at 20% 11%,
+      rgba(0, 255, 200, 0.2),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 150px 70px at 80% 11%,
+      rgba(0, 255, 200, 0.2),
+      transparent 70%
+    ),
+    url("https://gamepadviewer.com/ps4-assets/base.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 806px 598px, 806px 598px, 806px 598px, 806px 598px;
   box-shadow:
     0 0 28px rgba(0, 255, 200, 0.35),
     0 0 60px rgba(0, 255, 200, 0.12),
     inset 0 0 100px rgba(0, 255, 200, 0.07);
 }
 
-.controller.ds4::before {
+/* Contorno cian zona L2/R2 (barra superior de gatillos) */
+.ds4 .triggers {
+  border-radius: 6px;
+  box-shadow:
+    0 0 0 1px rgba(0, 255, 200, 0.65),
+    0 0 14px rgba(0, 255, 200, 0.25);
+}
+
+/* Contorno cian zona L1/R1 */
+.ds4 .bumpers {
+  border-radius: 4px;
+  box-shadow:
+    0 0 0 1px rgba(0, 255, 200, 0.7),
+    0 0 12px rgba(0, 255, 200, 0.28);
+}
+
+/* Botón PS: logo JAVOX en lugar del símbolo PlayStation */
+.ds4 .meta::before {
   content: "";
   position: absolute;
   left: 50%;
-  top: 38%;
+  top: 50%;
   transform: translate(-50%, -50%);
-  width: 120px;
-  height: 120px;
+  width: 30px;
+  height: 30px;
   background: url("assets/logo.png") no-repeat center / contain;
   pointer-events: none;
-  z-index: 5;
+  z-index: 2;
+  filter: drop-shadow(0 0 5px rgba(0, 255, 200, 0.85));
+}
+
+.ds4 .meta.pressed {
+  background: none !important;
+}
+
+.ds4 .meta.pressed::before {
+  transform: translate(-50%, -50%) scale(0.9);
+  opacity: 0.92;
+}
+
+/* SHARE / OPTIONS: el arte está en start.svg; zoom reduce todo el bloque */
+.ds4 .arrows {
+  zoom: 0.72;
 }
 
 .ds4 .touchpad {
@@ -73,7 +125,6 @@ body {
   opacity: 0.98;
 }
 
-/* Resplandor cian en piezas (no en el cuerpo entero → evita mando invisible) */
 .ds4 .button {
   filter: drop-shadow(0 0 5px rgba(0, 255, 200, 0.75));
 }
